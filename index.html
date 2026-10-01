@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hesham Elshereef | DevOps Engineer</title>
+
+    <meta
+        name="description"
+        content="Hesham Elshereef - DevOps Engineer specializing in Linux, AWS, Docker, Kubernetes, Ansible and CI/CD."
+    >
+
+    <style>
+        /* =========================
+           GENERAL
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b1120;
+            color: #e5e7eb;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        section {
+            padding: 90px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #9ca3af;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 17, 32, 0.95);
+            border-bottom: 1px solid #1f2937;
+            backdrop-filter: blur(10px);
+        }
+
+        nav {
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #38bdf8;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
+
+
+        /* =========================
+           HERO (REQUESTED STYLE)
+        ========================= */
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            padding: 50px 0;
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-subtitle {
+            color: #38bdf8;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            line-height: 1.15;
+            margin-bottom: 15px;
+        }
+
+        .hero-content h1 span {
+            color: #38bdf8;
+        }
+
+        .hero-role {
+            font-size: 22px;
+            color: #e5e7eb;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            color: #9ca3af;
+            font-size: 16px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            max-width: 600px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            transition: 0.3s;
+            display: inline-block;
+            font-size: 15px;
+        }
+
+        .btn-primary {
+            background: #38bdf8;
+            color: #07111f;
+            border-color: #38bdf8;
+            font-weight: bold;
+        }
+
+        .btn-primary:hover {
+            background: #7dd3fc;
+        }
+
+        .btn-secondary {
+            background: #111827;
+            color: #e5e7eb;
+        }
+
+        .btn-secondary:hover {
+            border-color: #38bdf8;
+            color: #38bdf8;
+        }
+
+        /* اليمين: الصورة الشخصية */
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #38bdf8;
+            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.2);
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            background: #0f172a;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: auto;
+            text-align: left;
+        }
+
+        .about-text {
+            color: #cbd5e1;
+            font-size: 18px;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .about-list {
+            margin: 20px 0;
+            padding-left: 20px;
+            color: #cbd5e1;
+            font-size: 17px;
+        }
+
+        .about-list li {
+            margin-bottom: 8px;
+        }
+
+        .about-interests {
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px solid #1f2937;
+            font-size: 16px;
+            color: #9ca3af;
+        }
+
+        .about-interests strong {
+            color: #38bdf8;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: #111827;
+            border: 1px solid #1f2937;
+            padding: 25px;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 15px;
+            color: #38bdf8;
+        }
+
+        .skill-list {
+            color: #cbd5e1;
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects {
+            background: #0f172a;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+        }
+
+        .project-tile {
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 42px;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            margin-bottom: 10px;
+        }
+
+        .project-content p {
+            color: #9ca3af;
+            margin-bottom: 15px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            background: #1e293b;
+            color: #7dd3fc;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 13px;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .project-links a {
+            border: 1px solid #334155;
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .project-links a:hover {
+            border-color: #38bdf8;
+            color: #38bdf8;
+        }
+
+
+        /* =========================
+           TRAINING & LEARNING
+        ========================= */
+
+        .training-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .training-card {
+            background: #111827;
+            border: 1px solid #1f2937;
+            padding: 25px;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .training-card:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+        }
+
+        .training-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 12px;
+        }
+
+        .training-card h3 {
+            font-size: 18px;
+            color: #e5e7eb;
+        }
+
+        .training-date {
+            font-size: 13px;
+            color: #9ca3af;
+            white-space: nowrap;
+            background: #1e293b;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+
+        .training-card p {
+            color: #9ca3af;
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0 0 20px 0;
+        }
+
+        .cert-link {
+            display: inline-block;
+            border: 1px solid #334155;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            color: #cbd5e1;
+            transition: 0.3s;
+        }
+
+        .cert-link:hover {
+            border-color: #38bdf8;
+            color: #38bdf8;
+        }
+
+
+        /* =========================
+           EDUCATION
+        ========================= */
+
+        .education {
+            background: #0f172a;
+        }
+
+        .education-card {
+            max-width: 800px;
+            margin: auto;
+            background: #111827;
+            border: 1px solid #1f2937;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: left;
+        }
+
+        .education-card h3 {
+            color: #38bdf8;
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+
+        .education-major {
+            color: #cbd5e1;
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .education-details {
+            color: #9ca3af;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .separator {
+            color: #38bdf8;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-content {
+            text-align: center;
+        }
+
+        .contact-content p {
+            color: #9ca3af;
+            margin-bottom: 25px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .phone-note {
+            margin-top: 22px;
+            color: #9ca3af;
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .skills-grid,
+            .projects-grid,
+            .training-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <header>
+        <div class="container">
+            <nav>
+
+                <a href="#home" class="logo">
+                    Hesham<span>.</span>
+                </a>
+
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section id="home" class="hero">
+
+        <div class="container">
+
+            <div class="hero-content">
+                <div class="hero-subtitle">Hello, I'm</div>
+
+                <h1>Hesham <span>Elshereef</span></h1>
+                
+                <div class="hero-role">DevOps Engineer</div>
+
+                <p>
+                    Fourth-year Communications and Electronics Engineering student interested in Cloud Computing, DevOps, Linux Administration, Automation and Infrastructure.
+                </p>
+
+                <div class="buttons">
+                    <a
+                        href="https://github.com/hesham-elshereef"
+                        target="_blank"
+                        class="btn btn-primary"
+                    >
+                        GitHub
+                    </a>
+
+                    <a
+                        href="https://www.linkedin.com/in/hesham-elshereef"
+                        target="_blank"
+                        class="btn btn-secondary"
+                    >
+                        LinkedIn
+                    </a>
+
+                    <a
+                        href="#projects"
+                        class="btn btn-secondary"
+                    >
+                        View Projects
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <img src="images/hesham-profile.jpg" alt="Hesham Elshereef" class="hero-image">
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section id="about" class="about">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>About Me</h2>
+                <p>A little bit about me</p>
+            </div>
+
+            <div class="about-content">
+
+                <p class="about-text">
+                    I'm a final-year Electronics and Communications Engineering student with a clear focus on DevOps and cloud infrastructure. My interest in this field grew out of a simple curiosity about what happens after code is written — how it actually gets built, shipped, and kept running reliably — and that curiosity has shaped most of my training and projects since.
+                </p>
+
+                <p class="about-text">
+                    Over the past year I've worked hands-on with Linux administration, containerization, and infrastructure automation through the DevOps Engineer Track at DEPI and a software engineering program at ITI, alongside AWS cloud training through NTI and a CCNA foundation in networking. I like understanding systems end to end, from the network layer up through the application, and I enjoy the discipline of automating things properly rather than doing them manually once and moving on.
+                </p>
+
+                <p class="about-text">
+                    I'm currently looking for an internship or entry-level DevOps role where I can take this foundation and apply it to real infrastructure, learn from experienced engineers, and keep building toward production-level responsibility.
+                </p>
+
+                <div class="about-interests">
+                    <strong>Technical Interests:</strong> 
+                    <span>DevOps • Cloud Computing • Linux Administration • Networking • Docker • Kubernetes • CI/CD</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SKILLS
+    ========================= -->
+
+    <section id="skills">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Technical Skills</h2>
+                <p>Technologies I work with</p>
+            </div>
+
+            <div class="skills-grid">
+
+                <div class="skill-card">
+                    <h3>Cloud</h3>
+                    <div class="skill-list">
+                        AWS<br>EC2<br>VPC<br>IAM<br>S3<br>RDS
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <h3>DevOps</h3>
+                    <div class="skill-list">
+                        Docker<br>Kubernetes<br>Ansible<br>GitHub Actions<br>Terraform<br>Git & GitHub
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Linux & Automation</h3>
+                    <div class="skill-list">
+                        RHEL<br>Ubuntu<br>Bash Scripting<br>System Administration
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Networking</h3>
+                    <div class="skill-list">
+                        CCNA — Routing & Switching<br>TCP/IP<br>VLANs<br>OSPF<br>NAT
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECTS
+    ========================= -->
+
+    <section id="projects" class="projects">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Featured Projects</h2>
+                <p>Some of my practical work</p>
+            </div>
+
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="project-tile" style="background:linear-gradient(135deg,#1e293b,#0f172a);">💻</div>
+                    <div class="project-content">
+                        <h3>Bash DBMS</h3>
+                        <p>A command-line database management system built using Bash scripting and Linux.</p>
+                        <div class="tags">
+                            <span class="tag">Bash</span>
+                            <span class="tag">Linux</span>
+                            <span class="tag">Shell Scripting</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/hesham-elshereef/Manage_DB_Project" target="_blank">GitHub</a>
+                            <a href="https://lnkd.in/p/daMU9qtz" target="_blank">🎥 Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-tile" style="background:linear-gradient(135deg,#0c4a6e,#0f172a);">🐳</div>
+                    <div class="project-content">
+                        <h3>Docker Project</h3>
+                        <p>Containerized application built with Docker — custom images, multi-container setups, volumes and networking.</p>
+                        <div class="tags">
+                            <span class="tag">Docker</span>
+                            <span class="tag">Linux</span>
+                            <span class="tag">Containers</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/hesham-elshereef" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-tile" style="background:linear-gradient(135deg,#1e3a8a,#0f172a);">☸️</div>
+                    <div class="project-content">
+                        <h3>Kubernetes Deployment</h3>
+                        <p>Kubernetes practice project covering Deployments, Services, ConfigMaps, Secrets, and pod affinity rules.</p>
+                        <div class="tags">
+                            <span class="tag">Kubernetes</span>
+                            <span class="tag">Minikube</span>
+                            <span class="tag">Linux</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/hesham-elshereef" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-tile" style="background:linear-gradient(135deg,#164e63,#0f172a);">☁️</div>
+                    <div class="project-content">
+                        <h3>AWS Infrastructure</h3>
+                        <p>Designed a two-tier AWS architecture using a VPC with public and private subnets, EC2 instances, and routing between them.</p>
+                        <div class="tags">
+                            <span class="tag">AWS</span>
+                            <span class="tag">VPC</span>
+                            <span class="tag">EC2</span>
+                            <span class="tag">Networking</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/hesham-elshereef" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CERTIFICATIONS
+    ========================= -->
+
+    <section id="certifications">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Certifications</h2>
+                <p>Completed courses and verified certificates</p>
+            </div>
+
+            <div class="training-grid">
+
+                <div class="training-card">
+                    <div class="training-header">
+                        <h3>Red Hat System Administration I (RH124)</h3>
+                        <span class="training-date">Jul 2026</span>
+                    </div>
+                    <p>Red Hat, Inc. — Linux system administration on RHEL.</p>
+                    <a href="certificates/RedHatCourseAttendance.pdf" target="_blank" class="cert-link">View Certificate ↗</a>
+                </div>
+
+                <div class="training-card">
+                    <div class="training-header">
+                        <h3>Cloud Essentials</h3>
+                        <span class="training-date">Jun–Jul 2026</span>
+                    </div>
+                    <p>NTI / ITIDA — 120-hour program, scored 88%. Student ID 157092.</p>
+                    <a href="certificates/nti-cloud-essentials.pdf" target="_blank" class="cert-link">View Certificate ↗</a>
+                </div>
+
+                <div class="training-card">
+                    <div class="training-header">
+                        <h3>HCCDA — Tech Essentials</h3>
+                        <span class="training-date">Jul 2026</span>
+                    </div>
+                    <p>Huawei ICT Academy — cloud & networking fundamentals. ID ICT20260723000076.</p>
+                    <a href="#" target="_blank" class="cert-link">View Certificate ↗</a>
+                </div>
+
+                <div class="training-card">
+                    <div class="training-header">
+                        <h3>Red Hat System Administration I</h3>
+                        <span class="training-date">Jul 2026</span>
+                    </div>
+                    <p>Mahara-Tech (ITI) — 9h 11m. Verification: EvIP8jcFWd.</p>
+                    <a href="#" target="_blank" class="cert-link">View Certificate ↗</a>
+                </div>
+
+                <div class="training-card">
+                    <div class="training-header">
+                        <h3>Ubuntu Linux Essentials</h3>
+                        <span class="training-date">Jun 2026</span>
+                    </div>
+                    <p>Mahara-Tech (ITI) — 7h 20m. Verification: XLzVLFpdjc.</p>
+                    <a href="certificates/Ubuntu_Linux_Course_Certificate_En.pdf" target="_blank" class="cert-link">View Certificate ↗</a>
+                </div>
+
+                <div class="training-card">
+                    <div class="training-header">
+                        <h3>Cisco CCNA & Soft Skills</h3>
+                        <span class="training-date">Sep 2024</span>
+                    </div>
+                    <p>NTI — 120 hrs: communication, leadership, business writing, interview skills.</p>
+                    <a href="certificates/NTI-Cisco-CCNA-Certificate.pdf" target="_blank" class="cert-link">View Certificate ↗</a>
+                </div>
+
+                <div class="training-card">
+                    <div class="training-header">
+                        <h3>Software Engineering Training</h3>
+                        <span class="training-date">2024</span>
+                    </div>
+                    <p>ITI — hands-on software engineering fundamentals and practices.</p>
+                    <a href="certificates/Software-Engineering-iti-Certificate.pdf" target="_blank" class="cert-link">View Certificate ↗</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         EDUCATION
+    ========================= -->
+
+    <section id="education" class="education">
+    <div class="container">
+        <div class="section-title"><h2>Education</h2><p>My academic background</p></div>
+        <div class="education-card">
+        <h3>Faculty of Engineering, Sohag University</h3>
+        <p class="education-major">Electronics &amp; Communications Engineering</p>
+        <div class="education-details">
+            <span>Fourth-Year Student</span><span class="separator">•</span>
+            <span>GPA: Excellent</span><span class="separator">•</span>
+            <span>Expected Graduation: 2027</span>
+        </div>
+        </div>
+    </div>
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section id="contact">
+    <div class="container">
+        <div class="section-title"><h2>Let's Connect</h2><p>Feel free to reach out to me</p></div>
+        <div class="contact-content">
+        <div class="contact-links">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=hesham.elshereef26@gmail.com" target="_blank" class="btn btn-primary">Email Me</a>
+            <a href="https://github.com/hesham-elshereef" target="_blank" class="btn btn-secondary">GitHub</a>
+            <a href="https://www.linkedin.com/in/hesham-elshereef" target="_blank" class="btn btn-secondary">LinkedIn</a>
+        </div>
+        <p class="phone-note">📞 +20 111 932 5453</p>
+        </div>
+    </div>
+    </section>
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer><p>© 2026 Hesham Elshereef. All rights reserved.</p></footer>
+
+</body>
+</html>
